@@ -1,0 +1,47 @@
+%decoration_title {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-left: 105px;
+    width: 141px;
+    height: 35px;
+    margin-top: 41px;
+    color: $color1;
+}
+
+%decoration_home {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500px;
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-left: 810px;
+    width: 35px;
+    height: 14px;
+    margin-top: 58px;
+    line-height: 14,06px;
+    color: $color1;
+}
+
+%decoration_mylibrary {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500px;
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-left: 884px;
+    width: 69px;
+    height: 14px;
+    margin-top: 58px;
+    line-height: 14,06px;
+    color: $color1;
+}
+
+%decoration_footer {
+    width: 482px;
+    height: 19px;
+    margin-top: 3730px;
+    margin-left: 271px;
+    color: $color4;
+}
