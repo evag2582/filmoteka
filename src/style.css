@@ -1,0 +1,24 @@
+#movieContainer{
+ display:flex;  /* este iten me pone las imagenes en una fila larga... */
+ flex-wrap: wrap;  /*hace que los elementos salten a la fila de abajo cuando no quepan en el ancho del contenedor */
+ justify-content: flex-start; /* Alinear elementos a la izquierda */
+
+
+
+
+
+}
+
+.movie {
+  /* Estilos individuales de cada película si los tienes */
+  flex: 0 0 calc(274px - 20px); /* Establece el ancho deseado con un margen de 10px */
+  margin: 10px;
+
+}
+
+.movie img {
+  width: 274px; /* Establece el ancho deseado */
+  height: 398px; /* Establece el alto deseado */
+  object-fit: cover; /* Esto ayuda a que la imagen se ajuste correctamente */
+  margin: 10px; /* Puedes ajustar el margen según tus preferencias */
+}
