@@ -1,8 +1,3 @@
-//Clave de la API: 4037711053de8efe03398288380ebc9e
-
-// Token de acceso de lectura a la API: 
-
-// eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MDM3NzExMDUzZGU4ZWZlMDMzOTgyODgzODBlYmM5ZSIsInN1YiI6IjY1MzhhMmNhMGZiMTdmMDBmZWIwZTg4OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UxYhSmIFVn6tD_sMBEEmpjwh8WjvI_HmrbH0Ps04Qsc
 const refs = {
     openModal: document.querySelector('.open-modal-team'),
     closeModal: document.querySelector('.close-modal-team'),
@@ -19,6 +14,7 @@ const refs = {
     document.addEventListener('keydown', onEscapeClose);
     document.addEventListener('click', onBackdropClose);
     refs.teamModal[0].classList.add('openModalAnimationTeam');
+    // document.body.style.overflow = 'hidden';
   }
   
   function closeModalTeam(event) {
