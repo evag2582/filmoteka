@@ -36,7 +36,6 @@
     &:hover,
     &:focus {
       fill: $colororange;
-      transform: rotate(360deg);
     }
   }
   
@@ -87,17 +86,7 @@
       font-size: 30px;
     }
   }
-  .team__title:after {
-    content: '';
-    display: block;
-    position: relative;
-    z-index: -1;
-    width: 100%;
-    margin: auto;
-    border-bottom: 3px solid black;
-    bottom: 0.15em;
-    transition: all 1s;
-  }
+
   H1:hover:after {
     width: 0%;
     border-bottom-width: 1px;
@@ -154,6 +143,7 @@
   .team__photo {
     height: auto;
     width: 100px;
+    border-radius: 30%;
     border: 2px;
     margin: auto;
     box-shadow: 0px 0px 3px 5px #ccc;
