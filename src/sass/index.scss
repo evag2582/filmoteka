@@ -1,2 +1,19 @@
-@import './common';
-@import './example';
+@import './Components/normalize';
+@import './Utils/variables';
+@import './Utils/mixin';
+@import './Utils/extends';
+@import './Components/barnav';
+@import './Components/header';
+@import './Components/hero';
+@import './Components/searchbox';
+@import './Components/gallery';
+@import './Components/pageindex';
+@import './Components/footer';
+@import './Components/modal-team';
+
+.container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
