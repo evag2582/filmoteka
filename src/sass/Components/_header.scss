@@ -31,6 +31,12 @@
   h1 {
     margin: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    h1 {
+      display: none;
+    }
+  }
   
   #search-form {
     display: flex;
@@ -46,13 +52,6 @@
     border-bottom: 1px solid #fff;
     background: transparent;
     color: #fff;
-  }
-  
-  .search-icon {
-    width: 24px;
-    height: 24px;
-    fill: white;
-    margin: 0;
   }
   
   nav ul {
