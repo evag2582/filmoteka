@@ -74,6 +74,7 @@ function displayMovieDetails(movie) {
   movieElement.innerHTML = `
     <h2>${movie.title}</h2>
     <p>${movie.overview}</p>
+    
     <img src="https://image.tmdb.org/t/p/w185/${movie.poster_path}" alt="${movie.title}">
   `;
 
@@ -96,12 +97,23 @@ document.getElementById('closeModal').addEventListener('click', function() {
 
 // Mostrar el modal con los detalles de la película
 function displayMovieDetails(movie) {
+  
   const modal = document.getElementById('movieModal');
   const detailsContainer = document.getElementById('movieDetails');
   detailsContainer.innerHTML = `
-    <h2>${movie.title}</h2>
-    <p>${movie.overview}</p>
+  <div class="dos">
     <img src="https://image.tmdb.org/t/p/w185/${movie.poster_path}" alt="${movie.title}">
-  `;
+   </div>
+
+  <div class="uno">
+    <h2>${movie.title}</h2>
+    
+     <p>Fecha de lanzamiento: ${movie.release_date}</p>
+    <p>Calificación promedio: ${movie.vote_average}</p>
+    <p>Géneros: ${movie.genre_ids}</p>
+    <p>${movie.overview}</p>
+     </div>
+     
+   `;
   modal.style.display = 'block';
 }

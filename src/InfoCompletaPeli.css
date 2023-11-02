@@ -90,7 +90,11 @@ button {
 
 /* Estilo para el contenedor de detalles de película visible */
 #movie-details.visible {
-    display: block;
+    display: flex;
+}
+
+div#movieDetails{
+    display: flex;
 }
 
 
