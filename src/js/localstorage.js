@@ -15,7 +15,7 @@ function addToWatched(movieId) {
 }
 
 document
-  .getElementByClass('add-watched-btn')
+  .getElementsByClassName('add-watched-btn')
   .addEventListener('click', function () {
     const movieId = 12345; // Reemplazar 12345 con el ID de la película real
 
@@ -37,7 +37,7 @@ const API_KEY = '4037711053de8efe03398288380ebc9e';
 
 const MOVIE_ID = 12345;
 
-const addButton = document.getElementByClass('add-queue-btn');
+const addButton = document.getElementsByClassName('add-queue-btn');
 const movieList = document.getElementById('movie-list'); //revisar
 
 function addToQueue() {
