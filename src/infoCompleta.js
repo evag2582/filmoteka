@@ -58,37 +58,12 @@ function getMovieDetails(movieId) {
     .then(response => response.json())
     .then(data => {
       // Llamar a la función para mostrar los detalles de la película
+      console.log(data);
+      console.log("revise la info de la api")
       displayMovieDetails(data);
     })
     .catch(err => console.error(err));
 }
-
-function displayMovieDetails(movie) {
-  console.log('Detalles de la película:', movie);
-
-  const detailsContainer = document.querySelector('#movie-details');
-  detailsContainer.innerHTML = '';
-
-  const movieElement = document.createElement('div');
-  movieElement.className = 'movie';
-  movieElement.innerHTML = `
-    <h2>${movie.title}</h2>
-    <p>${movie.overview}</p>
-    
-    <img src="https://image.tmdb.org/t/p/w185/${movie.poster_path}" alt="${movie.title}">
-  `;
-
-  detailsContainer.appendChild(movieElement);
-  detailsContainer.classList.add('visible'); // Mostrar los detalles
-}
-
-// Mostrar el modal cuando se hace clic en un botón "Detalles"
-document.querySelector('#results').addEventListener('click', function(event) {
-  if (event.target.classList.contains('details-button')) {
-    const movieId = event.target.parentElement.getAttribute('data-movie-id');
-    getMovieDetails(movieId);
-  }
-});
 
 // Cerrar el modal al hacer clic en la "X"
 document.getElementById('closeModal').addEventListener('click', function() {
@@ -97,7 +72,90 @@ document.getElementById('closeModal').addEventListener('click', function() {
 
 // Mostrar el modal con los detalles de la película
 function displayMovieDetails(movie) {
+
+ const   genresM = [
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 35,
+      "name": "Comedy"
+    },
+    {
+      "id": 80,
+      "name": "Crime"
+    },
+    {
+      "id": 99,
+      "name": "Documentary"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10751,
+      "name": "Family"
+    },
+    {
+      "id": 14,
+      "name": "Fantasy"
+    },
+    {
+      "id": 36,
+      "name": "History"
+    },
+    {
+      "id": 27,
+      "name": "Horror"
+    },
+    {
+      "id": 10402,
+      "name": "Music"
+    },
+    {
+      "id": 9648,
+      "name": "Mystery"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 10770,
+      "name": "TV Movie"
+    },
+    {
+      "id": 53,
+      "name": "Thriller"
+    },
+    {
+      "id": 10752,
+      "name": "War"
+    },
+    {
+      "id": 37,
+      "name": "Western"
+    }];
   
+  // const movie_genres = movie.genre_ids.map(m => genres.find(g => g.id === m).name);
+
+// const movie_genres = movie.genres ? movie.genres.map(m => genresM.find(g => g.id === m).name) : [];
+const movie_genres = movie.genres ? movie.genres.map(genre => genre.name) : [];
+
   const modal = document.getElementById('movieModal');
   const detailsContainer = document.getElementById('movieDetails');
   detailsContainer.innerHTML = `
@@ -108,12 +166,14 @@ function displayMovieDetails(movie) {
   <div class="uno">
     <h2>${movie.title}</h2>
     
-     <p>Fecha de lanzamiento: ${movie.release_date}</p>
+     <p>Vote/Vote: ${movie.vote_count} / ${movie.vote_average}</p>
     <p>Calificación promedio: ${movie.vote_average}</p>
-    <p>Géneros: ${movie.genre_ids}</p>
-    <p>${movie.overview}</p>
+  <p>Géneros:${movie_genres} </p>
+    
      </div>
      
    `;
   modal.style.display = 'block';
 }
+
+
