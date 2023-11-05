@@ -131,6 +131,7 @@ nav a:active{
   background-color: transparent;
   color: white;
   margin-top: 5%;
+  margin-left: 30%;
   border-bottom: 1px solid white;
   
   @media screen and (max-width: 767px) {
@@ -138,16 +139,3 @@ nav a:active{
   }
 
 }
-
-#search-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-icon {
-  width: 24px;
-  height: 24px;
-  color: white;
-  margin-top: 5%;
-} 

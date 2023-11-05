@@ -11,7 +11,7 @@ const options = {
 };
 
 // Función para obtener datos de películas populares
-export async function getPopularMovies() {
+async function getPopularMovies() {
   try {
     const response = await fetch(apiUrl, options);
     const data = await response.json();
@@ -133,4 +133,3 @@ export async function getPopularMovies() {
 
 // Llamar a la función para cargar los datos de películas populares
 getPopularMovies();
-

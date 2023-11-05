@@ -1,4 +1,3 @@
-import { getPopularMovies } from './popular';
 const apiKey = '4037711053de8efe03398288380ebc9e';
 
 document
@@ -155,8 +154,6 @@ function displayResults(data) {
      document.getElementById('movieContainer').appendChild(movieDiv);
    });
   } else {
-    const inputId = document.getElementById("input-id")
-    inputId.innerHTML = '<p class="no-results">No se encontraron resultados.</p>';
-    getPopularMovies()
+    resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
   }
 }
