@@ -17,23 +17,111 @@ async function getPopularMovies() {
     const data = await response.json();
 
     // Procesar los datos y mostrar las películas
-    data.results.forEach(movie => {
+      data.results.forEach(movie => {
+        const   genres = [
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 35,
+      "name": "Comedy"
+    },
+    {
+      "id": 80,
+      "name": "Crime"
+    },
+    {
+      "id": 99,
+      "name": "Documentary"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10751,
+      "name": "Family"
+    },
+    {
+      "id": 14,
+      "name": "Fantasy"
+    },
+    {
+      "id": 36,
+      "name": "History"
+    },
+    {
+      "id": 27,
+      "name": "Horror"
+    },
+    {
+      "id": 10402,
+      "name": "Music"
+    },
+    {
+      "id": 9648,
+      "name": "Mystery"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 10770,
+      "name": "TV Movie"
+    },
+    {
+      "id": 53,
+      "name": "Thriller"
+    },
+    {
+      "id": 10752,
+      "name": "War"
+    },
+    {
+      "id": 37,
+      "name": "Western"
+    }];
+  const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name) : [];
+          console.log("posiblemente paso la prueba");
+          
+      
+
       const movieDiv = document.createElement('div');
       movieDiv.className = 'movie';
 
-      const title = document.createElement('h2');
-      title.textContent = movie.title;
+   
 
       const image = document.createElement('img');
       image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       image.alt = movie.title;
 
-      const overview = document.createElement('p');
-      overview.textContent = movie.overview;
+        
+      const title = document.createElement('h2');
+      title.textContent = movie.title;
+        
 
-      movieDiv.appendChild(title);
-      movieDiv.appendChild(image);
-      movieDiv.appendChild(overview);
+      const overview = document.createElement('p');
+          overview.textContent = movie_genres;
+          console.log(movie_genres);
+
+     
+          movieDiv.appendChild(image);
+           movieDiv.appendChild(title);
+       movieDiv.appendChild(overview);
 
       document.getElementById('movieContainer').appendChild(movieDiv);
     });
