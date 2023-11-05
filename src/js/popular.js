@@ -98,7 +98,7 @@ export async function getPopularMovies() {
        const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(", ") : [];
           console.log("posiblemente paso la prueba");
       
-      const space = "";
+     
 
       const movieDiv = document.createElement('div');
       movieDiv.classList = 'movie';
