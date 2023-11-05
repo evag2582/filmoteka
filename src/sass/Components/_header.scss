@@ -10,9 +10,16 @@
   height: 230px;
   width: auto;
   display: flex;
-  justify-content: space-between;
   padding: 46 70 0 46;
+  flex-direction: column;
+  
 }
+.header-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+
   .header-bg-library {
     background-image: url("/src/images/header-bg.png");
     background-size: cover;
@@ -113,4 +120,22 @@ nav a:active{
       text-decoration: underline;
        text-decoration-thickness: 3px;
         color: #FF6B08;
+}
+
+.searchInput{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 336px;
+  background-color: transparent;
+  color: white;
+  margin-top: 5%;
+  margin-left: 30%;
+  border-bottom: 1px solid white;
+  
+  @media screen and (max-width: 767px) {
+    width: auto;
+  }
+
 }

@@ -45,23 +45,114 @@ function displayResults(data) {
 
   if (data.results && data.results.length > 0) {
     data.results.forEach(movie => {
-      const movieTitle = movie.title;
-      const movieOverview = movie.overview;
-      const moviePoster = movie.poster_path
-        ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
-        : 'no-image-available.jpg';
+      const   genres = [
+   {
+     "id": 28,
+     "name": "Action"
+   },
+   {
+     "id": 12,
+     "name": "Adventure"
+   },
+   {
+     "id": 16,
+     "name": "Animation"
+   },
+   {
+     "id": 35,
+     "name": "Comedy"
+   },
+   {
+     "id": 80,
+     "name": "Crime"
+   },
+   {
+     "id": 99,
+     "name": "Documentary"
+   },
+   {
+     "id": 18,
+     "name": "Drama"
+   },
+   {
+     "id": 10751,
+     "name": "Family"
+   },
+   {
+     "id": 14,
+     "name": "Fantasy"
+   },
+   {
+     "id": 36,
+     "name": "History"
+   },
+   {
+     "id": 27,
+     "name": "Horror"
+   },
+   {
+     "id": 10402,
+     "name": "Music"
+   },
+   {
+     "id": 9648,
+     "name": "Mystery"
+   },
+   {
+     "id": 10749,
+     "name": "Romance"
+   },
+   {
+     "id": 878,
+     "name": "Science Fiction"
+   },
+   {
+     "id": 10770,
+     "name": "TV Movie"
+   },
+   {
+     "id": 53,
+     "name": "Thriller"
+   },
+   {
+     "id": 10752,
+     "name": "War"
+   },
+   {
+     "id": 37,
+     "name": "Western"
+   }];
+ const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(", ") : [];
+         console.log("posiblemente paso la prueba");
+         
+     
 
-      const movieElement = document.createElement('div');
-        movieElement.className = 'movie';
-        
-      movieElement.innerHTML = `
-        <h2>${movieTitle}</h2>
-        <p>${movieOverview}</p>
-        <img src="${moviePoster}" alt="${movieTitle}">
-      `;
+     const movieDiv = document.createElement('div');
+     movieDiv.className = 'movie';
 
-      resultsContainer.appendChild(movieElement);
-    });
+  
+
+     const image = document.createElement('img');
+     image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+     image.alt = movie.title;
+
+       
+     const title = document.createElement('h2');
+     title.textContent = movie.title;
+       
+
+     const overview = document.createElement('p');
+         overview.textContent = movie_genres;
+         overview.classList = "genres-text";
+         console.log(movie_genres);
+
+    
+     movieDiv.appendChild(image);
+     movieDiv.appendChild(title);
+     movieDiv.appendChild(overview);
+
+     document.getElementById('movieContainer').appendChild(movieDiv);
+   });
   } else {
     resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
   }

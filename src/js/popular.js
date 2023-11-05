@@ -18,7 +18,7 @@ async function getPopularMovies() {
 
     // Procesar los datos y mostrar las películas
       data.results.forEach(movie => {
-        const   genres = [
+       const   genres = [
     {
       "id": 28,
       "name": "Action"
@@ -95,10 +95,10 @@ async function getPopularMovies() {
       "id": 37,
       "name": "Western"
     }];
-  const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name) : [];
+       const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(", ") : [];
           console.log("posiblemente paso la prueba");
-          
       
+      const space = "";
 
       const movieDiv = document.createElement('div');
       movieDiv.className = 'movie';
@@ -116,12 +116,13 @@ async function getPopularMovies() {
 
       const overview = document.createElement('p');
           overview.textContent = movie_genres;
+          overview.classList = "genres-text";
           console.log(movie_genres);
 
      
-          movieDiv.appendChild(image);
-           movieDiv.appendChild(title);
-       movieDiv.appendChild(overview);
+      movieDiv.appendChild(image);
+      movieDiv.appendChild(title);
+      movieDiv.appendChild(overview);
 
       document.getElementById('movieContainer').appendChild(movieDiv);
     });
