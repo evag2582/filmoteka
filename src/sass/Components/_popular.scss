@@ -1,0 +1,39 @@
+.movieContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+      }
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+      }
+
+
+}
+
+.movie {
+    flex: 0 0 calc(274px - 20px);
+    margin: 10px;
+
+}
+
+.movie img {
+    width: 274px;
+    height: 398px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 2%;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+.genres-text{
+    margin-top: 3%;
+    color: $colororange;
+    word-spacing: 2px;
+
+}
