@@ -101,13 +101,16 @@ export async function getPopularMovies() {
       const space = "";
 
       const movieDiv = document.createElement('div');
-      movieDiv.className = 'movie';
+      movieDiv.classList = 'movie';
+      movieDiv.setAttribute('data-movie-id', movie.id);
+
 
    
 
       const image = document.createElement('img');
       image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       image.alt = movie.title;
+      image.classList = "movie-image"
 
         
       const title = document.createElement('h2');
