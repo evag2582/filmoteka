@@ -8,5 +8,5 @@ import * as teamModal from './js/Modal';
 import "./js/popular";
 import "./js/buscar";
 import "./js/movie-modal";
-import "./js/local-storage"
+import "./js/local-storage";
 
