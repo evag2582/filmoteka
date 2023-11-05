@@ -21,7 +21,8 @@ movieContainer.addEventListener('click', function(event) {
               document.getElementById("modalDescription").innerHTML = data.overview;
               document.getElementById("modalRating").innerHTML = `votes: ${data.vote_average} / ${data.vote_count}`;
               document.getElementById("modalPopularity").innerHTML = `Popularity: ${data.popularity}`;
-          });
+              document.querySelector(".btns").setAttribute('data-movie-id', id)
+                      });
   }
 
   document.querySelector(".close").addEventListener("click", function () {
