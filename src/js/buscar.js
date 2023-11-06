@@ -21,6 +21,7 @@ function debounce(func, delay) {
 function searchMovies() {
   const searchQuery = document.getElementById('searchInput').value;
 
+  //hago la peticion de los resultados de la busqueda en api y uso funcion display
   if (searchQuery) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`;
 
@@ -41,9 +42,9 @@ function searchMovies() {
 function displayResults(data) {
   movieContainer.innerHTML = '';
 
-  const resultsContainer = document.getElementById('results');
+  // const resultsContainer = document.getElementById('results');
 
-  resultsContainer.innerHTML = '';
+  // resultsContainer.innerHTML = '';
 
   if (data.results && data.results.length > 0) {
     data.results.forEach(movie => {
@@ -128,10 +129,11 @@ function displayResults(data) {
       const movie_genres = movie.genre_ids
         ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(', ')
         : [];
-      console.log('posiblemente paso la prueba');
-
+     
       const movieDiv = document.createElement('div');
       movieDiv.className = 'movie';
+      movieDiv.setAttribute('modal-data-id', movie.id)
+      console.log(`agrego mi id:`)
 
       const image = document.createElement('img');
       image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
