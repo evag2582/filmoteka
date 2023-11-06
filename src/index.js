@@ -10,3 +10,4 @@ import "./js/buscar";
 import "./js/movie-modal";
 import "./js/local-storage";
 
+import { searchMovies } from './js/buscar';

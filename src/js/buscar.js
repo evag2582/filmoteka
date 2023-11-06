@@ -18,7 +18,8 @@ function debounce(func, delay) {
   };
 }
 
-function searchMovies() {
+
+export function searchMovies() {
   const searchQuery = document.getElementById('searchInput').value;
 
   //hago la peticion de los resultados de la busqueda en api y uso funcion display
