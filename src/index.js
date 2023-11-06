@@ -9,5 +9,5 @@ import "./js/popular";
 import "./js/buscar";
 import "./js/movie-modal";
 import "./js/local-storage"
-import "./js/library";
+
 
