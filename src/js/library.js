@@ -2,7 +2,6 @@ const watchButton =  document.querySelector(".queryWatch")
 const queueButton =  document.querySelector(".queryQueue")
 
 watchButton.addEventListener("click", function (event){
-    console.log("hola")
     const watchedContainer = document.querySelector(".watched-movies")
     const watched = JSON.parse(localStorage.getItem("watchedList")) 
     if (watched && watched.length > 0) {
@@ -32,16 +31,18 @@ watchButton.addEventListener("click", function (event){
           movieDiv.appendChild(overview);
           watchedContainer.appendChild(movieDiv);
           });
-      };
+      }
+      else {
+        watchedContainer.innerHTML= "";
+      alert("No tiene ninguna pelicula en esta seccion")
 
+      }
 })
 
 queueButton.addEventListener("click", function (event){
-  console.log("hola")
   const watchedContainer = document.querySelector(".watched-movies")
   const queue = JSON.parse(localStorage.getItem("queueList")) 
   if (queue && queue.length > 0) {
-      console.log("nnnn")
       watchedContainer.innerHTML= "";
     queue.forEach(movie => {
       console.log(movie);                         
@@ -66,7 +67,10 @@ queueButton.addEventListener("click", function (event){
         movieDiv.appendChild(overview);
         watchedContainer.appendChild(movieDiv);
         });
-    };
-
+    }
+    else {
+      watchedContainer.innerHTML= "";
+      alert("No tiene ninguna pelicula en esta seccion")
+    }
 })
 

@@ -13,8 +13,8 @@ movieContainer.addEventListener('click', function(event) {
             console.log(foundMovie);
             document.getElementById('image__movie').src = `https://image.tmdb.org/t/p/w500${foundMovie.poster_path}`;
             document.getElementById("title").innerHTML = foundMovie.title;
-            document.getElementById("votes").innerHTML = ` ${foundMovie.vote_average} / ${foundMovie.vote}`;
-            document.getElementById("popularity").innerHTML = `${foundMovie.popularity}`;
+            document.getElementById("votes").innerHTML = ` ${foundMovie.vote_average.toFixed(1)} / ${foundMovie.vote}`;
+            document.getElementById("popularity").innerHTML = `${foundMovie.popularity.toFixed(1)}`;
             document.getElementById("originalTitle").innerHTML = `${foundMovie.original_name}`;
             document.getElementById('genre').textContent = `${foundMovie.genres}`;
             document.getElementById("about-movie").innerHTML = foundMovie.overviwe;

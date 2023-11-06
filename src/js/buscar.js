@@ -137,9 +137,12 @@ function displayResults(data) {
             overviwe: movie.overview,
             genres:movie_genres,
           };
+
+          let year = (new Date(movie.release_date)).getFullYear();
+          console.log(year); 
     
           movieInfoArray.push(movieInfo);
-    
+
           const movieDiv = document.createElement("div");
           movieDiv.className = "movie";
           movieDiv.setAttribute('data-movie-id', movie.id);
@@ -155,7 +158,7 @@ function displayResults(data) {
             title.textContent = movie.title;
                 
           const overview = document.createElement('p');
-            overview.textContent = movie_genres;
+          overview.textContent = `${movie_genres} | ${year}`;
             overview.classList = "genres-text";    
           
         
