@@ -1,30 +1,32 @@
+const apiKey = '4037711053de8efe03398288380ebc9e';
 const movieWatched = JSON.parse(localStorage.getItem('watchedList'));
-localStorage.setItem('watchedList', JSON.stringify(movieWatched));
+// findindex recorro un arreglo de objetos. si existe o no. sino=
+// movieWatched.push({id: movie.id, title: movie.title, }) con los datos que no existen
+// localStorage.setItem('watchedList', JSON.stringify(movieWatched));
+
+
+
 
 const viewWatched = document.querySelector('.watched');
 viewWatched.addEventListener('click', function () {
   
-  console.log(movieWatched);
+    console.log(movieWatched);
+    
   console.log(movieWatched.length);
-  
-  // movieWatched.forEach(movie => {
-  //   console.log('imprimi un id:${movie}');
-  //       searchMovies(movie);
+ 
+    // for (const movieId of movieWatched) {
+    //   searchMovies(movieId);
+    //     console.log(movieId);
+        
+    // }
 
-  // }
-  
-  // );
-
-  // for (let i = 0; i < movieWatched.length; i++) {
-  //   searchMovies(movieWatched[i]);
-  //   console.log(movieWatched[i]);
-  //   }
-    for (const movieId of movieWatched) {
-      searchMovies(movieId);
-      console.log(movieId);
+      for (let i = 0; i < movieWatched.length; i++) {
+        searchMovies(movieWatched[i]);
     }
+    
+});
 
-    function searchMovies(movie) {
+ function searchMovies(movie) {
         
             const url = `https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`;
 
@@ -43,134 +45,151 @@ viewWatched.addEventListener('click', function () {
     }
 
 
-
-
-  function displayResults(data) {
+     function displayResults(data) {
       
+       console.log(`Datos de la película: ${data}`);
 
+        
+        
+    const results = data.results; // Extrae el arreglo de películas de la respuesta
+let count=0
+    if (Array.isArray(results)) {
+        results.forEach(movie => {
+            // Procesa cada película aquí
+            console.log(`ingrese: ${count+=1}`)
+        });
+    } else {
+        console.log("No se encontraron resultados de películas.");
+    }
+    // Agregar tu mensaje personalizado aquí
+    console.log('Iteración completada');
+        
+    }
   //    const detailsContainer = document.getElementById('movieDetails');
     // detailsContainer.innerHTML = 
     
-        // movieContainer.innerHTML = '';
-        const resultsContainer = document.getElementById('movie-details');
-        resultsContainer.innerHTML = '';
+        // movieContainer.innerHTML = '';hasta aca estaba comentado los dos de arriba
+        
+        
+    //     const resultsContainer = document.getElementById('movie-details');
+    //     resultsContainer.innerHTML = '';
 
-                  data.forEach(movie => {
+    //               data.forEach(movie => {
 
 
-                const genres = [
-                    {
-                        "id": 28,
-                        "name": "Action"
-                    },
-                    {
-                        "id": 12,
-                        "name": "Adventure"
-                    },
-                    {
-                        "id": 16,
-                        "name": "Animation"
-                    },
-                    {
-                        "id": 35,
-                        "name": "Comedy"
-                    },
-                    {
-                        "id": 80,
-                        "name": "Crime"
-                    },
-                    {
-                        "id": 99,
-                        "name": "Documentary"
-                    },
-                    {
-                        "id": 18,
-                        "name": "Drama"
-                    },
-                    {
-                        "id": 10751,
-                        "name": "Family"
-                    },
-                    {
-                        "id": 14,
-                        "name": "Fantasy"
-                    },
-                    {
-                        "id": 36,
-                        "name": "History"
-                    },
-                    {
-                        "id": 27,
-                        "name": "Horror"
-                    },
-                    {
-                        "id": 10402,
-                        "name": "Music"
-                    },
-                    {
-                        "id": 9648,
-                        "name": "Mystery"
-                    },
-                    {
-                        "id": 10749,
-                        "name": "Romance"
-                    },
-                    {
-                        "id": 878,
-                        "name": "Science Fiction"
-                    },
-                    {
-                        "id": 10770,
-                        "name": "TV Movie"
-                    },
-                    {
-                        "id": 53,
-                        "name": "Thriller"
-                    },
-                    {
-                        "id": 10752,
-                        "name": "War"
-                    },
-                    {
-                        "id": 37,
-                        "name": "Western"
-                    }];
-                const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(", ") : [];
-                console.log("posiblemente paso la prueba");
+    //             const genres = [
+    //                 {
+    //                     "id": 28,
+    //                     "name": "Action"
+    //                 },
+    //                 {
+    //                     "id": 12,
+    //                     "name": "Adventure"
+    //                 },
+    //                 {
+    //                     "id": 16,
+    //                     "name": "Animation"
+    //                 },
+    //                 {
+    //                     "id": 35,
+    //                     "name": "Comedy"
+    //                 },
+    //                 {
+    //                     "id": 80,
+    //                     "name": "Crime"
+    //                 },
+    //                 {
+    //                     "id": 99,
+    //                     "name": "Documentary"
+    //                 },
+    //                 {
+    //                     "id": 18,
+    //                     "name": "Drama"
+    //                 },
+    //                 {
+    //                     "id": 10751,
+    //                     "name": "Family"
+    //                 },
+    //                 {
+    //                     "id": 14,
+    //                     "name": "Fantasy"
+    //                 },
+    //                 {
+    //                     "id": 36,
+    //                     "name": "History"
+    //                 },
+    //                 {
+    //                     "id": 27,
+    //                     "name": "Horror"
+    //                 },
+    //                 {
+    //                     "id": 10402,
+    //                     "name": "Music"
+    //                 },
+    //                 {
+    //                     "id": 9648,
+    //                     "name": "Mystery"
+    //                 },
+    //                 {
+    //                     "id": 10749,
+    //                     "name": "Romance"
+    //                 },
+    //                 {
+    //                     "id": 878,
+    //                     "name": "Science Fiction"
+    //                 },
+    //                 {
+    //                     "id": 10770,
+    //                     "name": "TV Movie"
+    //                 },
+    //                 {
+    //                     "id": 53,
+    //                     "name": "Thriller"
+    //                 },
+    //                 {
+    //                     "id": 10752,
+    //                     "name": "War"
+    //                 },
+    //                 {
+    //                     "id": 37,
+    //                     "name": "Western"
+    //                 }];
+    //             const movie_genres = movie.genre_ids ? movie.genre_ids.map(m => genres.find(g => g.id === m).name).join(", ") : [];
+    //             console.log("posiblemente paso la prueba");
          
      
 
-                const movieDiv = document.createElement('div');
-                movieDiv.className = 'movie';
+    //             const movieDiv = document.createElement('div');
+    //             movieDiv.className = 'movie';
 
   
 
-                const image = document.createElement('img');
-                image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-                image.alt = movie.title;
+    //             const image = document.createElement('img');
+    //             image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+    //             image.alt = movie.title;
 
        
-                const title = document.createElement('h2');
-                title.textContent = movie.title;
+    //             const title = document.createElement('h2');
+    //             title.textContent = movie.title;
        
 
-                const overview = document.createElement('p');
-                overview.textContent = movie_genres;
-                overview.classList = "genres-text";
-                console.log(movie_genres);
+    //             const overview = document.createElement('p');
+    //             overview.textContent = movie_genres;
+    //             overview.classList = "genres-text";
+    //             console.log(movie_genres);
 
     
-                movieDiv.appendChild(image);
-                movieDiv.appendChild(title);
-                movieDiv.appendChild(overview);
+    //             movieDiv.appendChild(image);
+    //             movieDiv.appendChild(title);
+    //             movieDiv.appendChild(overview);
 
-                document.getElementById('movie-details').appendChild(movieDiv);
-            });
-    }
+    //             document.getElementById('movie-details').appendChild(movieDiv);
+    //         });
+    // }
 
 
 
-});
+
 
 
 
