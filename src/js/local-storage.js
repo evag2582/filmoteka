@@ -19,17 +19,14 @@ const addWhachedBtn = document.querySelector('.add-watched-btn')
 addWhachedBtn.addEventListener('click', function (event) {
   console.log(event.target.parentElement.getAttribute('data-movie-id'));  
     let movieId = event.target.parentElement.getAttribute('data-movie-id')
-    const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
-    
+    const movieWatched = JSON.parse(localStorage.getItem('movies'));
+      if (movieWatched && Array.isArray(movieWatched)) {
+     
+        const foundMovie = movieWatched.find(movie => movie.id == movieId);
 
-    fetch(movieUrl)
-      .then(response => response.json())
-      .then(data => {
-        addToWatched(movieId);
-      })
-      .catch(error => {
-        console.error('Error al obtener la información de la película:', error);
-      });
+        addToWatched(foundMovie);
+
+    }
   });
 
 //--------------------------------------------------------------------
@@ -54,14 +51,12 @@ const addQueueBtn = document.querySelector('.add-queue-btn')
 addQueueBtn.addEventListener('click', function (event) {
   console.log(event.target.parentElement.getAttribute('data-movie-id'));  
     let movieId = event.target.parentElement.getAttribute('data-movie-id')
-    const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
+    const movieWatched = JSON.parse(localStorage.getItem('movies'));
+      if (movieWatched && Array.isArray(movieWatched)) {
+     
+        const foundMovie = movieWatched.find(movie => movie.id == movieId);
 
-    fetch(movieUrl)
-      .then(response => response.json())
-      .then(data => {
-        addToQueue(movieId);
-      })
-      .catch(error => {
-        console.error('Error al obtener la información de la película:', error);
-      });
+        addToQueue(foundMovie);
+
+    }
   });
