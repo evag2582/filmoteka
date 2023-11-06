@@ -17,14 +17,26 @@ movieContainer.addEventListener('click', function(event) {
           .then(response => response.json())
           .then(data => {
               document.getElementById('image__movie').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-              document.getElementById("modalTitle").innerHTML = data.title;
-              document.getElementById("modalDescription").innerHTML = data.overview;
-              document.getElementById("modalRating").innerHTML = `votes: ${data.vote_average} / ${data.vote_count}`;
-              document.getElementById("modalPopularity").innerHTML = `Popularity: ${data.popularity}`;
+              document.getElementById("title").innerHTML = data.title;
+              document.getElementById("votes").innerHTML = ` ${data.vote_average} / ${data.vote_count}`;
+              document.getElementById("popularity").innerHTML = `${data.popularity}`;
+              document.getElementById("originalTitle").innerHTML = `${data.original_title}`;
+              const genres = data.genres.map(genre => genre.name).join(', ');
+              document.getElementById('genre').textContent = `${genres}`;
+              document.getElementById("about-movie").innerHTML = data.overview;
               document.querySelector(".btns").setAttribute('data-movie-id', id)
                       });
   }
 
-  document.querySelector(".close").addEventListener("click", function () {
+  function closeModal() {
     document.getElementById("myModal").style.display = "none";
+}
+
+document.querySelector(".close").addEventListener("click", closeModal);
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
 });
+

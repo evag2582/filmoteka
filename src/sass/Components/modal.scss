@@ -1,22 +1,29 @@
 .modal {
     display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.2);
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    left: 0;
+    opacity: 1;
+    z-index: 10;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 882px;
+    height: 568px;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
 .close {
@@ -24,6 +31,9 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    right: 2%;
+    top: 1%;
 }
 
 .close:hover,
@@ -60,7 +70,184 @@
     border: #fff;
 }
 
-#image__movie{
+.image__movie {
     width: 396px;
     height: 478px;
+}
+
+.add-watched-btn:focus,
+.add-queue-btn:focus {
+    background-color: #FF6B01;
+    color: #ffffff;
+    border: #fff;
+}
+
+
+
+.content__modal {
+    display: flex;
+}
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35.16px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.image__movie {
+    padding-right: 30px;
+    height: 477px;
+}
+
+.description {
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.left-descr-content {
+    color: #8c8c8c;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 8px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    display: grid;
+}
+
+.votes,
+.popularity,
+.originalTitle,
+.genre {
+    color: #000000;
+}
+
+.average {
+    color: #fff;
+    background: #ff6b01;
+    border-radius: 5px;
+    margin-right: 3px;
+    padding: 1px 7px;
+}
+
+.div__about {
+    flex-direction: column;
+    font-size: 12px;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.about {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 16px;
+}
+
+.about-movie {
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+
+.btns {
+    display: flex;
+    gap: 20px;
+}
+
+.add-watched-btn,
+.add-queue-btn {
+    text-align: center;
+    color: #000;
+    padding: 10px 12px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: background-color .25s cubic-bezier(.4, 0, .2, 1), color .25s cubic-bezier(.4, 0, .2, 1);
+    cursor: pointer;
+}
+
+.add-watched-btn:hover,
+.add-queue-btn:hover {
+    background-color: #FF6B01;
+    color: #ffffff;
+    border: #fff;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .content__modal {
+        flex-wrap: wrap;
+    }
+
+    .image__movie {
+        width: 240px;
+        height: 357px;
+        padding-top: 50px;
+        padding-left: 40px;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .modal-content {
+        width: 300px;
+        height: 600px;
+        padding: 0px;
+        margin: 0px;
+        overflow: auto;
+    }
+
+    .title {
+        width: 266px;
+        height: auto;
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 0;
+        padding-left: 10px;
+    }
+
+    .information {
+        align-items: center;
+        text-align: center;
+    }
+
+    .btns {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
+
+    .about-movie {
+        width: 240px;
+        height: auto;
+        margin-bottom: 0px;
+
+    }
+
+    .div__about {
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1023px) {
+    .modal-content {
+        width: 618px;
+        height: auto;
+    }
+
+    .image__movie {
+        width: 264px;
+        height: 373px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
 }
