@@ -20,6 +20,7 @@ addWhachedBtn.addEventListener('click', function (event) {
   console.log(event.target.parentElement.getAttribute('data-movie-id'));  
     let movieId = event.target.parentElement.getAttribute('data-movie-id')
     const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
+    
 
     fetch(movieUrl)
       .then(response => response.json())

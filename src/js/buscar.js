@@ -133,12 +133,14 @@ function displayResults(data) {
      
       const movieDiv = document.createElement('div');
       movieDiv.className = 'movie';
-      movieDiv.setAttribute('modal-data-id', movie.id)
+      movieDiv.setAttribute('data-movie-id', movie.id)
       console.log(`agrego mi id:`)
 
       const image = document.createElement('img');
       image.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       image.alt = movie.title;
+      image.classList = "movie-image"
+
 
       const title = document.createElement('h2');
       title.textContent = movie.title;
