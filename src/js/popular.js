@@ -168,3 +168,14 @@ function saveMoviesToLocalStorage(movies) {
 }
 
 
+////////////////////
+// pagination
+const numberBtn = document.querySelector(".number-btn")
+const next = document.querySelector(".siguiente")
+const preview = document.querySelector(".anterior")
+
+numberBtn.textContent = currentPage
+
+next.addEventListener("click", function (){
+  currentPage += 1;
+})
