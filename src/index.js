@@ -9,5 +9,6 @@ import "./js/popular";
 import "./js/buscar";
 import "./js/movie-modal";
 import "./js/local-storage";
+import "./js/paginationexp";
 
 import { searchMovies } from './js/buscar';

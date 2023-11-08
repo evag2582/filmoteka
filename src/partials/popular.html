@@ -1,15 +1,12 @@
 <body>
+  <div id="movieContainer" class="movieContainer">
+    <!-- Aquí se cargarán las imágenes y la información de las películas -->
+  </div>
 
+  <div id="results" class="movieContainer"></div>
 
-   
-    <div id="movieContainer" class="movieContainer">
-        <!-- Aquí se cargarán las imágenes y la información de las películas -->
-    </div>
-
- <div id="results" class="movieContainer"> </div>
-
-   <div id="movie-container"></div>
-   <ul class="pagination" id="pagination-container">
+  <div id="movie-container"></div>
+  <!-- <ul class="pagination" id="pagination-container">
 
     <button class="anterior">
         <<
@@ -19,7 +16,109 @@
     <button class="siguiente">
         >>
     </button>
-   </ul>
+   </ul> -->
 
-     
+  <!--------------------------------------- PAGEXPERIMENTAL-SD --------------------------------------->
+
+  <!-- <div class="paginationexp">
+    
+    <nav class="paginationexp-container">
+        <button class="paginationexp-button" id="back-button" aria-label="back page" title="back page">&back</button>
+
+        <div id="paginationexp-numbers"></div>
+        <button class="paginationexp-button" id="goahead-button" aria-label="go page" title="go page">&go</button>
+    </nav>
+    <ul>
+
+    </ul class="paginationexp-container">
+    <li id="back-page" class="paginationexp-container__item back -arrow-background"><a href="#">&back;</a></li>
+    <li class="paginationexp-container__item"><a href="#">1</a></li>
+    <li class="paginationexp-container__item"><a href="#">2</a></li>
+    
+
+</div> -->
+
+  <div class="paginationexp">
+    <button id="backpage" class="paginationexp-button back">
+      <a href="#">
+        <svg class="arrow-left">
+          <use href="/src/images/svg/icons.svg#arrow-left"></use>
+        </svg>
+      </a>
+    </button>
+
+    <button id="boxnumber" class="paginationexp-button active">1</button>
+
+    <button id="boxnumber" class="paginationexp-button">
+      <a href="#">
+        <svg class="boxpoints">
+          <use href="/src/images/svg/icons.svg#points"></use>
+        </svg>
+      </a>
+    </button>
+
+    <button id="boxnumber" class="paginationexp-button">2</button>
+    <button id="boxnumber" class="paginationexp-button">3</button>
+    <button id="boxnumber" class="paginationexp-button">4</button>
+    <button id="boxnumber" class="paginationexp-button">5</button>
+    <button id="boxnumber" class="paginationexp-button">6</button>
+   
+    <button id="boxnumber" class="paginationexp-button">
+      <a href="#">
+        <svg class="boxpoints">
+          <use href="/src/images/svg/icons.svg#points"></use>
+        </svg>
+      </a>
+    </button>
+
+    <button id="boxnumber" class="paginationexp-button">1000</button>
+
+    <button id="goaheadpage" class="paginationexp-button goahead">
+      <a href="#">
+        <svg class="arrow-right">
+          <use href="/src/images/svg/icons.svg#arrow-right"></use>
+        </svg>
+      </a>
+    </button>
+  </div>
+
+  <!-- <div class="paginationexp">
+        <button
+          id="backpage"
+          class="paginationexp-button back"
+          style="display: block"
+        >
+          <a href="#">
+            <svg class="arrow-left">
+              <use href="/src/images/svg/icons.svg#arrow-left"></use>
+            </svg>
+          </a>
+        </button>
+     -->
+
+  <!-- <div id="pageNumberContainer" class="paginationexp-numbers">
+      <button id="boxnumber" class="paginationexp-button active">1</button>
+      <span>...</span>
+      <button id="boxnumber" class="paginationexp-button">2</button>
+      <button id="boxnumber" class="paginationexp-button">3</button>
+      <button id="boxnumber" class="paginationexp-button">4</button>
+      <button id="boxnumber" class="paginationexp-button">5</button>
+      <button id="boxnumber" class="paginationexp-button">6</button>
+      <span>...</span>
+      <button id="boxnumber" class="paginationexp-button">1000</button>
+    </div> -->
+
+  <!-- <button
+      id="goaheadpage"
+      class="paginationexp-button goahead"
+      style="display: block"
+    >
+
+    <a href="#">
+        <svg class="arrow-left">
+          <use href="/src/images/svg/icons.svg#arrow-right"></use>
+        </svg>
+      </a>
+    </button>
+  </div> -->
 </body>

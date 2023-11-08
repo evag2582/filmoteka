@@ -14,11 +14,106 @@
 
 }
 
-#pagination-container {
+// #pagination-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.paginationexp {
     display: flex;
     justify-content: center;
     align-items: center;
+    //width: 100%;
+    background-color: transparent;
 }
+
+#backpage {
+    background-color: $colorbackgray;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    color: $colorblack;
+}
+
+#goaheadpage {
+    background-color: $colorbackgray;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    color: $colorblack;
+    //margin-left: 100px;
+    //margin-top: 25px;
+}
+
+.arrow-left {
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+.arrow-right {
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+.points {
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+
+
+// #pageNumberContainer {
+//     //width: 30px;
+//     //height: 30px;
+//     //background-color: yellowgreen;
+// }
+
+
+.paginationexp-numbers {
+    display: flex;
+    align-items: center;
+}
+
+#boxnumber {
+    //background-color: lightblue;
+    background-color: transparent;
+    width: 44px;
+    height: 16px;
+    color: $colorblack;
+}
+
+
+.boxpoints {
+    background-color: transparent;
+    width: 44px;
+    height: 16px;
+    color: $colorblack;
+}
+
+.paginationexp-button {
+    color: red; 
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+// .paginationexp-button {
+//     font: "Roboto";
+//     font-size: 12px;
+//     color: $colorblack;
+//     margin: 1%;
+//     padding: 10px;
+//     background-color
+// }
 
 .movie {
     margin: 10px;
@@ -55,23 +150,23 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.pagination {
-    display: flex;
-    list-style: none;
-}
+// .pagination {
+//     display: flex;
+//     list-style: none;
+// }
 
-.pagination li {
-    margin: 5px;
-    cursor: pointer;
-}
+// .pagination li {
+//     margin: 5px;
+//     cursor: pointer;
+// }
 
-.current-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: $colororange;
-    color: $colorwhite;
-    border-radius: 5px;
-}
+// .current-page {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 40px;
+//     height: 40px;
+//     background-color: $colororange;
+//     color: $colorwhite;
+//     border-radius: 5px;
+// }
