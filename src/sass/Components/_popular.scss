@@ -1,0 +1,77 @@
+.movieContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 768px) and (max-width:1200px) {
+        justify-content: center;
+    }
+
+
+}
+
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie {
+    margin: 10px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 2%;
+}
+
+h2 {
+    text-transform: uppercase;
+    align-self: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.genres-text {
+    margin-top: 1%;
+    color: $colororange;
+    word-spacing: 2px;
+    align-self: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+}
+
+.pagination li {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.current-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $colororange;
+    color: $colorwhite;
+    border-radius: 5px;
+}
